@@ -11,7 +11,18 @@ const db = {};
 
 let sequelize;
 if (config.use_env_variable) {
-  sequelize = new Sequelize(process.env[config.use_env_variable], config);
+  console.log('using env var', config.use_env_variable, process.env[config.use_env_variable]);
+  let herokuConfig = {
+    dialect: 'postgres',
+    protocol: 'postgres',
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false
+      }
+    }
+  };
+  sequelize = new Sequelize(process.env[config.use_env_variable], herokuConfig);
 } else {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
@@ -31,6 +42,10 @@ Object.keys(db).forEach(modelName => {
     db[modelName].associate(db);
   }
 });
+
+// Synchronize tables in database so they match the model definitions
+//sequelize.sync()
+// There is also a command to drop tabes if need be
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

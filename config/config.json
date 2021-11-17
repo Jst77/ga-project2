@@ -2,7 +2,8 @@
   "development": {
     "database": "express_auth_development",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "use_env_variable":"DATABASE_URL"
   },
   "test": {
     "database": "express_auth_test",
@@ -15,3 +16,4 @@
     "dialect": "postgres"
   }
 }
+
