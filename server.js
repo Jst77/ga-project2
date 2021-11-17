@@ -45,6 +45,7 @@ app.use('/auth', require('./controllers/auth'))
 app.get('/', (req, res)=>{
     res.render('home')
 })
+app.use("/musicSearch", require("./controllers/musicRoutes"))
 
 // profile route
 app.get('/profile', isLoggedIn, (req, res)=>{
@@ -56,4 +57,4 @@ app.listen(3000, ()=>{
     console.log(`process.env.SUPER_SECRET_SOMETHING ${process.env.SUPER_SECRET_SOMETHING}`)
     console.log("auth_practice running on port 3000")
 
-})
+}) 
