@@ -43,9 +43,10 @@ app.use('/auth', require('./controllers/auth'))
 
 // home route
 app.get('/', (req, res)=>{
-    res.render('home')
+    res.render('home', {randomText: 'This is random text'})
 })
 app.use("/musicSearch", require("./controllers/musicRoutes"))
+app.use("/mood", require("./controllers/musicRoutes"))
 
 // profile route
 app.get('/profile', isLoggedIn, (req, res)=>{
