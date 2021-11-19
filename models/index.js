@@ -44,7 +44,7 @@ Object.keys(db).forEach(modelName => {
 });
 
 // Synchronize tables in database so they match the model definitions
-//sequelize.sync()
+sequelize.sync()
 // There is also a command to drop tabes if need be
 
 db.sequelize = sequelize;
