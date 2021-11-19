@@ -1,12 +1,24 @@
 <h2><%= currentUser.name %>'s Profile</h2>
 
-<form action= "/Mood" method="post">
-    <label for="mood">Mood</label> 
-    <button type="submit">Choose</button>
-</form>
 
-<form action="/Genre" method="post">
-    <label for="genre">Genre</label>
+<form action= "/Mood" method="post">
+    <label for="mood">Mood
+        <select name="mood">
+            <% moods.forEach((mood) => { %>
+                <option value="<%= mood %>"><%= mood %></option>
+            <% }) %>
+        </select>
+    </label> 
+
+    <label for="genre">Genre
+        <select name="genre">
+            <% genres.forEach((genre) => { %>
+                <option value="<%= genre %>"><%= genre %></option>
+            <% }) %>
+        </select>
+    </label>
+
     <button type="submit">Choose</buton>
+
 </form> 
 

@@ -52,6 +52,13 @@ module.exports = (sequelize, DataTypes) => {
         modelName: 'song',
     });
 
+    song.getMoods = function() {
+        return ['happy','sad','angry','romantic','motivational'];
+    }
+
+    song.getGenres = function() {
+        return ['rap','rock','R&B','Pop','electronic'];
+    }   
     return song;
     
 }
