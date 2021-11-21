@@ -38,5 +38,25 @@ router.get('/profile', isLoggedIn, (req, res)=>{
     res.render('profile', context)
 })
 
+router.post('/list', isLoggedIn, (req, res)=>{
+    console.log(req.body)
+    db.song.findAll({
+        where: {mood: req.body.mood,genre: req.body.genre},
+    })
+    .then((songs)=>{
+        console.log(songs);
+        let context = {
+            mood: req.body.mood,
+            genre: req.body.genre,
+            songs: songs
+        }
+        res.render('musicList', context)
+    })
+    .catch(err =>{ // !-> FLASH <-!
+        req.flash('error', err.message) 
+        res.redirect('/auth/music/profile')
+    })
+    
+})
 module.exports=router
 
