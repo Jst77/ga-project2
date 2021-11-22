@@ -14,6 +14,7 @@ app.use(ejsLayouts)
 
 // body parser middelware
 app.use(express.urlencoded({extended:false}))
+app.use('/static', express.static('public'))
 
 // session middleware
 app.use(session({
@@ -55,3 +56,4 @@ app.listen(3000, ()=>{
     console.log("auth_practice running on port 3000")
 
 }) 
+
