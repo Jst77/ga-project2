@@ -1,13 +1,36 @@
-# Set Up For Use on Local Machine (Mac & Postgres)
-
-Here's how to download and run this application on your local mac:
-
-* Fork & Clone
-* `npm i` to install dependencies
-* create database with `createdb express_auth_development` ***OR CHANGE DB NAME TO MATCH THE NAME OF YOUR APP*** _(you'll need to make changes to `config/config.json` too)_
-* if your postgress process requires a username and password, add these to the `config/config.json` file
-* migrate models to your database with `sequelize db:migrate` (This command assumes you have the sequelize-cli installed globally. If you don't, run `npm i sequelize-cli` to install in this project.)
-
+# Music and Mood Generator 
+## About 
+The purpose of this app is to get a first-hand look into the music that I am into. Users have the ability to see what kind of music I would listen to based off of their current mood and what genre of music they would want to listen to. 
+**Sign Up**
+* Add first name
+* Add last name
+* Add email
+* Create password
+* Hit Submit
+### Logged in user
+**Home Page**
+* The Home page consists of a drop down menu that allows the user to pick their current mood and what genre of music they want to listen to 
+        * *Example: Happy and electronic     
+## Tech Stack
+ html,Postgres, JS, EJS, CSS, RESTful, npm install
+## Wireframe
+Please reference original wireframe 
+## ERD Model
+Please reference ERD 
+## Live Link
+## MVP Goals
+* Goal 1
+* Goal 2
+* Goal 3
+* Goal 4
+## Stretch Goals
+* Stretch Goal 1
+* Stretch Goal 2
+* Stretch Goal 3
+## Any Potential Roadblocks
+* Potential Roadblock 1
+* Potential Roadblock 2
+* Potential Roadblock 3
 
 
 
